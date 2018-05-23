@@ -1,4 +1,4 @@
-# 官方安卓星云钱包接入文档
+# 官方安卓星云钱包（nasnano）接入文档
 
  nasnano下载地址（http://ory7cn4fx.bkt.clouddn.com/android/app-1.0.0-ch-Mainnet-release.apk）
 
