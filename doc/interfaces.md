@@ -1,5 +1,7 @@
 # 官方安卓星云钱包接入文档
 
+ nasnano下载地址（http://ory7cn4fx.bkt.clouddn.com/android/app-1.0.0-ch-Mainnet-release.apk）
+
 安卓跳转简述
 ```
 context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))；
