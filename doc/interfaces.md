@@ -16,7 +16,7 @@ url中的paramsJSON为传输中所带的参数，在不同的接口中参数不�
 在第一版本中，接口包括如下三个：
 
 
-| Name        | Intro           | 
+| Name        | Intro           | 
 | ---------- |:-------------:|
 | pay     | 转账 |
 | call    | 调用合约函数      |
@@ -82,7 +82,7 @@ url中的paramsJSON为传输中所带的参数，在不同的接口中参数不�
 }
 ```
 
-（3）查询交易状态
+###（3）查询交易状态
 
 ```
 测试网：“https://pay.nebulas.io/api/pay/query?payId=” + serialNumber
