@@ -9,7 +9,7 @@ import android.text.TextUtils;
  * Created by donald99 on 18/5/23.
  */
 
-public class Action {
+public class ContractAction {
 
     /**
      * Schema 方式启动星云钱包

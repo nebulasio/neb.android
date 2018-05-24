@@ -5,7 +5,7 @@ import android.content.Context;
 import java.io.IOException;
 
 import io.nebulas.Constants;
-import io.nebulas.action.Action;
+import io.nebulas.action.ContractAction;
 import io.nebulas.model.GoodsModel;
 import io.nebulas.model.OpenAppMode;
 import io.nebulas.model.PageParamsModel;
@@ -63,7 +63,7 @@ public class SmartContracts {
 
         String url = OpenAppSchema.getSchemaUrl(params);
 
-        Action.start(context, url);
+        ContractAction.start(context, url);
     }
 
 
@@ -104,7 +104,7 @@ public class SmartContracts {
 
         String url = OpenAppSchema.getSchemaUrl(params);
 
-        Action.start(context, url);
+        ContractAction.start(context, url);
     }
 
     /**
