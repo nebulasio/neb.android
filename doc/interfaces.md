@@ -9,7 +9,7 @@ context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))；
 
 其中url具体定义如下
 ```
-url = “openapp.NASnano://virtual?params=” + paramsJSON.toString();
+url = “openapp.nasnano://virtual?params=” + paramsJSON.toString();
 ```
 
 url中的paramsJSON为传输中所带的参数，在不同的接口中参数不同。
