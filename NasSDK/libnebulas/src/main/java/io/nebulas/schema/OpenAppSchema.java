@@ -13,6 +13,6 @@ public class OpenAppSchema {
      * @return schemaurl
      */
     public static String getSchemaUrl(String paramsJSON){
-        return String.format("openapp.NASnano://virtual?params=%s", paramsJSON);
+        return String.format("openapp.nasnano://virtual?params=%s", paramsJSON);
     }
 }
