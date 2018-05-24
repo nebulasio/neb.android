@@ -13,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
 //        SmartContracts.pay();
 //        SmartContracts.call();
-//        SmartContracts.getTransferStatus();
+//        SmartContracts.queryTransferStatus();
     }
 }

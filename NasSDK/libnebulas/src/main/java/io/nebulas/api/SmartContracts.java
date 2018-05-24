@@ -112,7 +112,8 @@ public class SmartContracts {
      * @param mainNet 0 测试网    1 主网
      * @param serialNumber
      */
-    public static void getTransferStatus(int mainNet, String serialNumber,final TransferStatusCallback callback){
+    public static void queryTransferStatus(int mainNet, String serialNumber,final TransferStatusCallback callback){
+
         String ENDPOINT = "";
 
         if (mainNet == 0) {
