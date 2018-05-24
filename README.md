@@ -1,6 +1,8 @@
 # 官方安卓星云钱包（nasnano）接入文档
 
  nasnano下载地址：https://testnet.nebulas.io/static/wallet/android/nas-nano-Testnet-v1.0.0.apk （测试网） 
+ http://ory7cn4fx.bkt.clouddn.com/android/app-1.0.0-ch-Mainnet-release.apk (主网)
+
 
 安卓跳转简述
 ```
