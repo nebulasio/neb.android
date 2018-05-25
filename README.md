@@ -42,9 +42,9 @@ dependencies {
                 GoodsModel gm = new GoodsModel();
                 gm.name = "mytestGood";       // 商品名称
                 gm.desc = "mytestGoodDesp";   //商品描述
-
                 String toAddr = "n1lxxx…………………………";  // 目标地址
                 String valueInWei = "your value";    // your value
+                
                 SmartContracts.pay(MainActivity.this , gm, toAddr, valueInWei);
 
             }
