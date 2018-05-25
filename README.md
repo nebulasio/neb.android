@@ -72,7 +72,7 @@ dependencies {
 ## 感谢社区小伙伴 大道 提供技术支持
 
 #### 本工程处于测试中，如有问题或建议请及时反馈
-#### 更多希望提供技术支持的小伙伴可以在官方微信群等处提供支持 https://nebulas.io/developers.html
+#### 更多希望提供技术支持的小伙伴可以在 https://nebulas.io/developers.html 或官方微信群申请，期待来自你们的元气 :)
 
 
 
