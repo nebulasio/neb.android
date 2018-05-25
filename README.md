@@ -11,6 +11,7 @@ nasnano下载地址：https://nano.nebulas.io/index_cn.html
 方式实例（其他包依赖管理方式均可）：
 
 下载https://github.com/nebulasio/androidSDK/blob/master/libnebulas-release.aar 
+
 (或自行打包https://github.com/nebulasio/androidSDK/edit/master/README.md)
 
 （1）将aar包在你项目的libs中
