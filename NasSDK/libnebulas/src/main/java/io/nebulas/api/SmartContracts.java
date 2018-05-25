@@ -35,14 +35,14 @@ public class SmartContracts {
      * @param to      转账目标地址
      * @param value   转账value，单位为wei (1NAS =10^18 wei)
      */
-    public static void pay(Context context, GoodsModel goods, String to, String value) {
+    public static void pay(Context context, GoodsModel goods, String to, String value, String serialNumber) {
 
         OpenAppMode openAppMode = new OpenAppMode();
         openAppMode.category = Constants.CATEGORY;
         openAppMode.des = Constants.DESCRIPTION;
 
         PageParamsModel pageParamsModel = new PageParamsModel();
-        pageParamsModel.serialNumber = Util.getRandomCode(Constants.RANDOM_LENGTH);
+        pageParamsModel.serialNumber = serialNumber;
         pageParamsModel.callback = Constants.CALL_BACK;
         pageParamsModel.goods = goods;
 
@@ -74,14 +74,14 @@ public class SmartContracts {
      * @param value   转账value，单位为wei (1NAS =10^18 wei)
      * @param args    函数参数列表
      */
-    public static void call(Context context, GoodsModel goods, String to, String value, String[] args) {
+    public static void call(Context context, GoodsModel goods, String to, String value, String[] args, String serialNumber) {
 
         OpenAppMode openAppMode = new OpenAppMode();
         openAppMode.category = Constants.CATEGORY;
         openAppMode.des = Constants.DESCRIPTION;
 
         PageParamsModel pageParamsModel = new PageParamsModel();
-        pageParamsModel.serialNumber = Util.getRandomCode(Constants.RANDOM_LENGTH);
+        pageParamsModel.serialNumber = serialNumber;
         pageParamsModel.callback = Constants.CALL_BACK;
         pageParamsModel.goods = goods;
 
