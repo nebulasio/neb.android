@@ -3,20 +3,14 @@
 
 nasnano下载地址：https://nano.nebulas.io/index_cn.html
 
+#### 安卓版本接入简述
+在你的项目工程中引入该项目，下面的方式仅为示例（其他包依赖管理方式均可）：
 
-安卓版本跳转简述
-#### 引入androidSDK 
-在你的项目工程中引入该项目 
+下载https://github.com/nebulasio/androidSDK/blob/master/libnebulas-release.aar  (或自行打包该工程的libnebulas)
 
-方式实例（其他包依赖管理方式均可）：
+（1）将aar包复制到你项目的libs中
 
-下载https://github.com/nebulasio/androidSDK/blob/master/libnebulas-release.aar 
-
-(或自行打包https://github.com/nebulasio/androidSDK/edit/master/README.md)
-
-（1）将aar包在你项目的libs中
-
-（2）在build.gradle中引入依赖
+（2）在build.gradle中引入相关依赖描述
 
 ```
 repositories {
@@ -36,6 +30,7 @@ dependencies {
 }
 ```
 
+## 调用接口
 #### 调用接口 pay
 ```
         clickButton.setOnClickListener( new View.OnClickListener() {
