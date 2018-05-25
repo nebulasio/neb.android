@@ -14,6 +14,7 @@ nasnano下载地址：https://nano.nebulas.io/index_cn.html
 (或自行打包https://github.com/nebulasio/androidSDK/edit/master/README.md)
 
 （1）将aar包在你项目的libs中
+
 （2）在build.gradle中引入依赖
 
 ```
