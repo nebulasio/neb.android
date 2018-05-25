@@ -6,7 +6,7 @@ nasnano下载地址：https://nano.nebulas.io/index_cn.html
 #### 安卓版本接入简述
 在你的项目工程中引入该项目，下面的方式仅为示例（其他包依赖管理方式均可）：
 
-下载https://github.com/nebulasio/androidSDK/blob/master/libnebulas-release.aar  (或自行打包该工程下的libnebulas)
+下载https://github.com/nebulasio/androidSDK/blob/master/libnebulas-release.aar  (或自行build该工程下的libnebulas)
 
 （1）将aar包复制到你项目的libs中
 
