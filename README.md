@@ -12,7 +12,7 @@ nasnano下载地址：https://nano.nebulas.io/index_cn.html
 
 （2）在build.gradle中引入相关依赖描述
 
-```
+```java
 repositories {
     flatDir {
         dir 'libs'
@@ -20,7 +20,7 @@ repositories {
 }
 ```
 
-```
+```java
 dependencies {
 ...
 +    compile(name: 'libnebulas-release', ext: 'aar')
@@ -37,7 +37,7 @@ dependencies {
 
 
 
-```
+```java
         clickButton.setOnClickListener( new View.OnClickListener() {
 
             @Override
