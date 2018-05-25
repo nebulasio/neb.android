@@ -67,7 +67,8 @@ dependencies {
 >    queryTransferStatus(int mainNet, String serialNumber, final SmartContracts.TransferStatusCallback callback) 
 
 
-## (测试中，如有问题或建议请及时反馈)
 
-#### 感谢社区小伙伴 大道 提供技术支持
+## 感谢社区小伙伴 大道 提供技术支持
+#### (测试中，如有问题或建议请及时反馈)
+
 
