@@ -32,6 +32,11 @@ dependencies {
 
 ## 调用接口
 #### 调用接口 pay
+
+>    public static void pay(Context context, GoodsModel goods, String to, String value) 
+
+
+
 ```
         clickButton.setOnClickListener( new View.OnClickListener() {
 
@@ -50,10 +55,19 @@ dependencies {
             }
         });
 ```
-#### 调用接口 call() 传入参数参考上面
-#### 调用接口 queryTransferStatus() 传入id
+
+#### 调用接口 call() 传入参数参考上面:
+    
+   
+>    public static void call(Context context, GoodsModel goods, String to, String value, String[] args) 
 
 
+#### 调用接口 queryTransferStatus() :    
 
-> 感谢社区小伙伴 大道 提供技术支持
+>    queryTransferStatus(int mainNet, String serialNumber, final SmartContracts.TransferStatusCallback callback) 
+
+
+## (测试中，如有问题或建议请及时反馈)
+
+#### 感谢社区小伙伴 大道 提供技术支持
 
