@@ -58,5 +58,7 @@ dependencies {
 #### 调用接口 call() 传入参数参考上面
 #### 调用接口 queryTransferStatus() 传入id
 
-感谢社区小伙伴 大道提供技术支持
+
+
+> 感谢社区小伙伴 大道 提供技术支持
 
