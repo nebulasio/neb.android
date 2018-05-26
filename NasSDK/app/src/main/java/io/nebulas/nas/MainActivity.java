@@ -1,13 +1,12 @@
 package io.nebulas.nas;
 
-import android.content.Context;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import io.nebulas.api.SmartContracts;
@@ -77,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.i(TAG,"response:" + response);
 
+                Looper.prepare();
+                Toast.makeText(MainActivity.this,"response:"+response,Toast.LENGTH_LONG).show();
+                Looper.loop();
+
             }
 
             @Override
@@ -84,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.i(TAG,"error:" + error);
 
+                Looper.prepare();
+                Toast.makeText(MainActivity.this,"error:" + error,Toast.LENGTH_LONG).show();
+                Looper.loop();
             }
         });
     }

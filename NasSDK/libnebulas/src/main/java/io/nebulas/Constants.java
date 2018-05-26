@@ -23,4 +23,6 @@ public class Constants {
 
     public static final String CALL_PAYLOAD_FUNCTION = "set"; //合约中的方法名
 
+    public static final String NAS_NANO_PACKAGE_NAME = "io.nebulas.wallet.android";//nas nano package name
+
 }
