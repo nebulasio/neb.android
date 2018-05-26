@@ -9,6 +9,10 @@ public class Constants {
 
     public static final int RANDOM_LENGTH = 32;
 
+    public static String NAS_NANO_WALLET_PKG = "io.nebulas.wallet.android";
+
+    public static String NAS_NANO_WALLET_DOWNLOAD_URL = "https://nano.nebulas.io/";
+
     public final static String CATEGORY = "jump";
 
     public final static String DESCRIPTION = "confirmTransfer";
