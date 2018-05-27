@@ -33,7 +33,7 @@ dependencies {
 ## 调用接口
 #### 调用接口 pay
 
->    public static void pay(Context context, GoodsModel goods, String to, String value) 
+>    public static void pay(Context context, GoodsModel goods, String to, String value, String serialNumber) 
 
 
 
@@ -50,7 +50,9 @@ dependencies {
                 String toAddr = "n1lxxx…………………………";  // 目标地址
                 String valueInWei = "your value";    // your value
                 
-                SmartContracts.pay(MainActivity.this , gm, toAddr, valueInWei);
+                String serialNumber = Util.getRandomCode(32);
+                
+                SmartContracts.pay(MainActivity.this , gm, toAddr, valueInWei, serialNumber);
 
             }
         });
@@ -59,7 +61,7 @@ dependencies {
 #### 调用接口 call() 传入参数参考上面:
     
    
->    public static void call(Context context, GoodsModel goods, String to, String value, String[] args) 
+>    public static void call(Context context, GoodsModel goods, String to, String value, String[] args, String serialNumber) 
 
 
 #### 调用接口 queryTransferStatus() :    
