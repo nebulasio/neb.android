@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import io.nebulas.Constants;
 import io.nebulas.api.SmartContracts;
 import io.nebulas.model.GoodsModel;
 import io.nebulas.utils.Util;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         if (view == null) {
             return;
         }
-        serialNumber = Util.getRandomCode(32);
+        serialNumber = Util.getRandomCode(Constants.RANDOM_LENGTH);
 
         String to = "n1ULQeCi1FEbDn4tktufhzZXCTnv4eJQb4C";//入账钱包地址，钱包地址，钱包地址
 
@@ -44,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
         goods.name = goodsName.getText().toString();
         goods.desc = goodsDescription.getText().toString();
 
-        SmartContracts.pay(this,  goods,  to, value , serialNumber);
+        SmartContracts.pay(this, Constants.MAIN_NET, goods,  to, value , serialNumber);
 
     }
 
     public void nasCall(View view){
 
-        serialNumber = Util.getRandomCode(32);
+        serialNumber = Util.getRandomCode(Constants.RANDOM_LENGTH);
 
         GoodsModel goods = new GoodsModel();
         goods.name = goodsName.getText().toString();
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] args = new String[]{"one","two","three"};
 
-        SmartContracts.call(this, goods,  to, value, args, serialNumber);
+        SmartContracts.call(this, Constants.MAIN_NET , goods,  to, value, args, serialNumber);
     }
 
     public void nasQueryTransferStatus(View view){
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        SmartContracts.queryTransferStatus(1, serialNumber,new SmartContracts.TransferStatusCallback(){
+        SmartContracts.queryTransferStatus(Constants.MAIN_NET, serialNumber,new SmartContracts.TransferStatusCallback(){
             @Override
             public void onSuccess(String response) {
 
@@ -94,3 +95,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+

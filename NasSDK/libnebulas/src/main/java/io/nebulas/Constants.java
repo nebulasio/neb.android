@@ -7,13 +7,19 @@ package io.nebulas;
 
 public class Constants {
 
+    public static final int TEST_NET = 0;
+
+    public static final int MAIN_NET = 1;
+
     public static final int RANDOM_LENGTH = 32;
 
-    public final static String CATEGORY = "jump";
+    public static final String CATEGORY = "jump";
 
-    public final static String DESCRIPTION = "confirmTransfer";
+    public static final String DESCRIPTION = "confirmTransfer";
 
-    public static final String CALL_BACK = "https://pay.nebulas.io/api/pay";
+    public static final String TEST_NET_CALL_BACK = "https://pay.nebulas.io/api/pay";
+
+    public static final String MAIN_NET_CALL_BACK = "https://pay.nebulas.io/api/mainnet/pay";
 
     public static final String PAY_CURRENCY = "NAS";
 

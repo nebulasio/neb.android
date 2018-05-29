@@ -31,11 +31,13 @@ public class SmartContracts {
 
     /**
      * pay接口：       星云地址之间的转账
+     * @param  mainNet  0 测试网    1 主网
      * @param goods   商品详情
      * @param to      转账目标地址
      * @param value   转账value，单位为wei (1NAS =10^18 wei)
+     * @param serialNumber 随机码
      */
-    public static void pay(Context context, GoodsModel goods, String to, String value, String serialNumber) {
+    public static void pay(Context context, int mainNet,GoodsModel goods, String to, String value, String serialNumber) {
 
         OpenAppMode openAppMode = new OpenAppMode();
         openAppMode.category = Constants.CATEGORY;
@@ -43,7 +45,11 @@ public class SmartContracts {
 
         PageParamsModel pageParamsModel = new PageParamsModel();
         pageParamsModel.serialNumber = serialNumber;
-        pageParamsModel.callback = Constants.CALL_BACK;
+        if (mainNet == 0) {
+            pageParamsModel.callback = Constants.TEST_NET_CALL_BACK;
+        }else{
+            pageParamsModel.callback = Constants.MAIN_NET_CALL_BACK;
+        }
         pageParamsModel.goods = goods;
 
         PayloadModel payloadModel = new PayloadModel();
@@ -69,12 +75,14 @@ public class SmartContracts {
 
     /**
      * call函数：      调用智能合约
+     * @param  mainNet  0 测试网    1 主网
      * @param goods   商品详情（*）
      * @param to      转账目标地址
      * @param value   转账value，单位为wei (1NAS =10^18 wei)
      * @param args    函数参数列表
+     * @param serialNumber 随机码
      */
-    public static void call(Context context, GoodsModel goods, String to, String value, String[] args, String serialNumber) {
+    public static void call(Context context, int mainNet,GoodsModel goods, String to, String value, String[] args, String serialNumber) {
 
         OpenAppMode openAppMode = new OpenAppMode();
         openAppMode.category = Constants.CATEGORY;
@@ -82,7 +90,11 @@ public class SmartContracts {
 
         PageParamsModel pageParamsModel = new PageParamsModel();
         pageParamsModel.serialNumber = serialNumber;
-        pageParamsModel.callback = Constants.CALL_BACK;
+        if (mainNet == 0) {
+            pageParamsModel.callback = Constants.TEST_NET_CALL_BACK;
+        }else{
+            pageParamsModel.callback = Constants.MAIN_NET_CALL_BACK;
+        }
         pageParamsModel.goods = goods;
 
         PayloadModel payloadModel = new PayloadModel();
