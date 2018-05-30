@@ -26,7 +26,7 @@ public class Constants {
     public static final String PAY_PAYLOAD_TYPE = "binary";
 
     public static final String CALL_PAYLOAD_TYPE = "call";
-    
+
     public static final String NAS_NANO_PACKAGE_NAME = "io.nebulas.wallet.android";//nas nano package name
 
 }

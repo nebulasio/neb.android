@@ -57,11 +57,13 @@ public class MainActivity extends AppCompatActivity {
         goods.name = goodsName.getText().toString();
         goods.desc = goodsDescription.getText().toString();
 
+
         String to = "n1zVUmH3BBebksT4LD5gMiWgNU9q3AMj3se";//部署上链的，合约地址，合约地址，合约地址
+        String functionName = "set";
 
         String[] args = new String[]{"one","two","three"};
 
-        SmartContracts.call(this, Constants.MAIN_NET , goods,  to, value, args, serialNumber);
+        SmartContracts.call(this, Constants.MAIN_NET ,  goods, functionName, to, value, args, serialNumber);
     }
 
     public void nasQueryTransferStatus(View view){
