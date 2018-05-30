@@ -77,12 +77,13 @@ public class SmartContracts {
      * call函数：      调用智能合约
      * @param  mainNet  0 测试网    1 主网
      * @param goods   商品详情（*）
+     * @param functionName 调用合约的函数名
      * @param to      转账目标地址
      * @param value   转账value，单位为wei (1NAS =10^18 wei)
      * @param args    函数参数列表
      * @param serialNumber 随机码
      */
-    public static void call(Context context, int mainNet,GoodsModel goods, String to, String value, String[] args, String serialNumber) {
+    public static void call(Context context, int mainNet,GoodsModel goods, String functionName, String to, String value, String[] args, String serialNumber) {
 
         OpenAppMode openAppMode = new OpenAppMode();
         openAppMode.category = Constants.CATEGORY;
@@ -99,7 +100,7 @@ public class SmartContracts {
 
         PayloadModel payloadModel = new PayloadModel();
         payloadModel.type = Constants.CALL_PAYLOAD_TYPE;
-        payloadModel.function = Constants.CALL_PAYLOAD_FUNCTION;
+        payloadModel.function = functionName;
         payloadModel.args = args;
 
         PayModel payModel = new PayModel();
