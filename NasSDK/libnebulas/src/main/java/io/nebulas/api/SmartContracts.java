@@ -13,7 +13,6 @@ import io.nebulas.model.PayModel;
 import io.nebulas.model.PayloadModel;
 import io.nebulas.okhttp.OkHttpManager;
 import io.nebulas.schema.OpenAppSchema;
-import io.nebulas.utils.Util;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Request;
@@ -157,4 +156,5 @@ public class SmartContracts {
         void onSuccess(String response);
         void onFail(String error);
     }
+
 }

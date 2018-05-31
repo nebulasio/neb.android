@@ -33,18 +33,12 @@ public class ContractAction {
 
     private static void handleException(Context context){
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(String.format("market://details?id=%s", Constants.NAS_NANO_PACKAGE_NAME)));
-
+        Toast.makeText(context, "没安装Nebulas智能数字钱包，正在前往官网下载...", Toast.LENGTH_LONG).show();
+        intent.setData(Uri.parse(String.format(Constants.NAS_NANO_DOWNLOAD_URL)));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
-            Toast.makeText(context, "没安装Nebulas智能数字钱包，请下载安装", Toast.LENGTH_SHORT).show();
             context.startActivity(intent);
         } else {
-            intent.setData(Uri.parse(String.format("https://play.google.com/store/apps/details?id=%s",Constants.NAS_NANO_PACKAGE_NAME)));
-            if (intent.resolveActivity(context.getPackageManager()) != null) {
-                context.startActivity(intent);
-            } else {
-                Toast.makeText(context, "没安装应用市场或浏览器", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(context, "没安装应用市场或浏览器，下载失败", Toast.LENGTH_SHORT).show();
         }
     }
 
