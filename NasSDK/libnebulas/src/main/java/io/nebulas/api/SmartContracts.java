@@ -13,7 +13,6 @@ import io.nebulas.model.PayModel;
 import io.nebulas.model.PayloadModel;
 import io.nebulas.okhttp.OkHttpManager;
 import io.nebulas.schema.OpenAppSchema;
-import io.nebulas.utils.Util;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Request;
@@ -36,8 +35,9 @@ public class SmartContracts {
      * @param to      转账目标地址
      * @param value   转账value，单位为wei (1NAS =10^18 wei)
      * @param serialNumber 随机码
+     * @param callback 调用钱包回调
      */
-    public static void pay(Context context, int mainNet,GoodsModel goods, String to, String value, String serialNumber) {
+    public static void pay(Context context, int mainNet,GoodsModel goods, String to, String value, String serialNumber,InvockWalletCallback callback) {
 
         OpenAppMode openAppMode = new OpenAppMode();
         openAppMode.category = Constants.CATEGORY;
@@ -69,7 +69,7 @@ public class SmartContracts {
 
         String url = OpenAppSchema.getSchemaUrl(params);
 
-        ContractAction.start(context, url);
+        ContractAction.start(context, url,callback);
     }
 
 
@@ -82,8 +82,9 @@ public class SmartContracts {
      * @param value   转账value，单位为wei (1NAS =10^18 wei)
      * @param args    函数参数列表
      * @param serialNumber 随机码
+     * @param callback 调用钱包回调
      */
-    public static void call(Context context, int mainNet,GoodsModel goods, String functionName, String to, String value, String[] args, String serialNumber) {
+    public static void call(Context context, int mainNet,GoodsModel goods, String functionName, String to, String value, String[] args, String serialNumber,InvockWalletCallback callback) {
 
         OpenAppMode openAppMode = new OpenAppMode();
         openAppMode.category = Constants.CATEGORY;
@@ -117,7 +118,7 @@ public class SmartContracts {
 
         String url = OpenAppSchema.getSchemaUrl(params);
 
-        ContractAction.start(context, url);
+        ContractAction.start(context, url,callback);
     }
 
     /**
@@ -156,5 +157,15 @@ public class SmartContracts {
     public interface TransferStatusCallback{
         void onSuccess(String response);
         void onFail(String error);
+    }
+
+    /**
+     * 调用钱包回调
+     */
+    public interface InvockWalletCallback{
+        //调用成功
+        void onSuccess();
+        //调用失败
+        void onFail(int error);
     }
 }

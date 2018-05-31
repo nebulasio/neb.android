@@ -7,6 +7,8 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import io.nebulas.Constants;
+import io.nebulas.api.SmartContracts;
+import io.nebulas.common.ErrorCode;
 
 /**
  * Created by donald99 on 18/5/23.
@@ -19,7 +21,7 @@ public class ContractAction {
      * @param context 上下文
      * @param url     schema
      */
-    public static void start(Context context, String url) {
+    public static void start(Context context, String url, SmartContracts.InvockWalletCallback callback) {
         if (context == null || TextUtils.isEmpty(url)) {
             return;
         }
@@ -27,7 +29,8 @@ public class ContractAction {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             context.startActivity(intent);
         } catch (Exception e) {
-            handleException(context);
+//            handleException(context);
+            callback.onFail(ErrorCode.WALLET_NOT_INSTALL);
         }
     }
 
