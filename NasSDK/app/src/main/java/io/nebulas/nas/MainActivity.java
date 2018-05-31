@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import io.nebulas.Constants;
 import io.nebulas.api.SmartContracts;
+import io.nebulas.common.ErrorCode;
 import io.nebulas.model.GoodsModel;
 import io.nebulas.utils.Util;
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         goods.name = goodsName.getText().toString();
         goods.desc = goodsDescription.getText().toString();
 
-        SmartContracts.pay(this, Constants.MAIN_NET, goods,  to, value , serialNumber);
+        SmartContracts.pay(this, Constants.MAIN_NET, goods,  to, value , serialNumber,invockWalletCallback);
 
     }
 
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] args = new String[]{"one","two","three"};
 
-        SmartContracts.call(this, Constants.MAIN_NET ,  goods, functionName, to, value, args, serialNumber);
+        SmartContracts.call(this, Constants.MAIN_NET ,  goods, functionName, to, value, args, serialNumber,invockWalletCallback);
     }
 
     public void nasQueryTransferStatus(View view){
@@ -96,5 +97,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private SmartContracts.InvockWalletCallback invockWalletCallback = new SmartContracts.InvockWalletCallback() {
+        @Override
+        public void onSuccess() {
+            Log.d(TAG, "调用钱包成功");
+        }
+
+        @Override
+        public void onFail(int error) {
+            Log.e(TAG, "调用钱包失败");
+            if (error == ErrorCode.WALLET_NOT_INSTALL){
+                Toast.makeText(MainActivity.this,"没有安装钱包，请前往官网下载钱包",Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
 }
 
