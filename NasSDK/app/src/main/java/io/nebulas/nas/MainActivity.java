@@ -1,8 +1,8 @@
 package io.nebulas.nas;
 
+import android.os.Bundle;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -96,5 +96,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
 

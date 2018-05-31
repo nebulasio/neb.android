@@ -156,4 +156,5 @@ public class SmartContracts {
         void onSuccess(String response);
         void onFail(String error);
     }
+
 }
