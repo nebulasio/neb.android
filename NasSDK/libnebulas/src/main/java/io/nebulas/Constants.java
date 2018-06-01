@@ -17,6 +17,12 @@ public class Constants {
 
     public static final String DESCRIPTION = "confirmTransfer";
 
+    public static final String MAIN_NET_RPC_ACCOUNT_STATE_URL = "https://mainnet.nebulas.io/v1/user/accountstate";
+
+    public static final String MAIN_NET_RPC_CALL_URL = "https://mainnet.nebulas.io/v1/user/call";
+
+    public static final String MAIN_NET_PAY_URL = "https://pay.nebulas.io/api/";
+
     public static final String TEST_NET_CALL_BACK = "https://pay.nebulas.io/api/pay";
 
     public static final String MAIN_NET_CALL_BACK = "https://pay.nebulas.io/api/mainnet/pay";
