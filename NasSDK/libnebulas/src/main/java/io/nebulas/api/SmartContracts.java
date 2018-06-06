@@ -176,8 +176,8 @@ public class SmartContracts {
         callContractModel.from = from;
         callContractModel.to = to;
         callContractModel.nonce = nonce;
-        callContractModel.gasLimit = "1000000";
-        callContractModel.gasPrice = "200000";
+        callContractModel.gasLimit = "200000";
+        callContractModel.gasPrice = "1000000";
         callContractModel.value = "0";
         RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(callContractModel));
         Request request = new Request.Builder().url(Constants.MAIN_NET_RPC_CALL_URL).post(requestBody).build();
