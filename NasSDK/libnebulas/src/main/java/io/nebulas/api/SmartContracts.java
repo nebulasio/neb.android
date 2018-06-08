@@ -82,6 +82,7 @@ public class SmartContracts {
 
     /**
      * call函数：      调用智能合约
+     * 所得结果上链
      *
      * @param mainNet      0 测试网    1 主网
      * @param goods        商品详情（*）
@@ -160,14 +161,16 @@ public class SmartContracts {
     }
 
     /**
-     * 查询合约上存储的的数据内容
+     * 注：该方法为模拟执行，执行的结果并不会上链。
+     * 常用于调用get类型的接口，查询数据。
+     *
      * @param contractModel
      * @param from
      * @param to
      * @param nonce
      * @param callback
      */
-    public static void call(ContractModel contractModel, String from, String to, int nonce, final StatusCallback callback){
+    public static void simulateCall(ContractModel contractModel, String from, String to, int nonce, final StatusCallback callback){
         if (contractModel == null || TextUtils.isEmpty(from)) {
             return;
         }
@@ -176,7 +179,7 @@ public class SmartContracts {
         callContractModel.from = from;
         callContractModel.to = to;
         callContractModel.nonce = nonce;
-        callContractModel.gasLimit = "200000";
+        callContractModel.gasLimit = "400000";
         callContractModel.gasPrice = "1000000";
         callContractModel.value = "0";
         RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(callContractModel));

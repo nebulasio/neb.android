@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
         String from = "n22Djb3G8dzLyeRMWAxov7j3ExLdhnLtwgw";
 
-        SmartContracts.call(contractModel,from,from,1, new SmartContracts.StatusCallback() {
+        SmartContracts.simulateCall(contractModel,from,from,1, new SmartContracts.StatusCallback() {
             @Override
             public void onSuccess(final String response) {
 
