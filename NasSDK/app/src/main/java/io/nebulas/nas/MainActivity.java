@@ -134,11 +134,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void nasCallContract(View view) {
-
         ContractModel contractModel = new ContractModel();
-        contractModel.args = Arrays.toString(new Object[]{1,0,1});//notice: Arrays.toString() was need , if not : {"error":"json: cannot unmarshal array into Go value of type string"}
-        contractModel.function = "history";
 
+        //contractModel.addArg("美扑伪麻片");
+        //contractModel.function = "getDrugItem";
+        //String from = "n1haLy4Ka989bB7NujA9LxRMhU4FP6PFoK4";
+
+        contractModel.addArg(1);
+        contractModel.addArg(0);
+        contractModel.addArg(1);
+        contractModel.function = "history";
         String from = "n22Djb3G8dzLyeRMWAxov7j3ExLdhnLtwgw";
 
         SmartContracts.simulateCall(contractModel,from,from,1, new SmartContracts.StatusCallback() {
